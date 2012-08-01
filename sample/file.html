@@ -1,0 +1,42 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  </head>
+  <body>
+    
+      <input type="file" name="toupload[]"  id="toupload" multiple/>  
+      <input id="go" type="submit" value="go" /> 
+    
+    <script>
+      document.getElementById('go').onclick = function(){
+        var files = document.getElementById('toupload');
+        console.log(files.files);
+        
+        var xhr = new XMLHttpRequest();
+        xhr.upload.addEventListener('progress',function(ev){
+          console.log((ev.loaded/ev.total)*100+'%');
+        }, false);
+        
+        xhr.onreadystatechange = function(ev){
+          // Blah blah blah, you know how to make AJAX requests
+          console.log(ev);
+        };
+        xhr.open('POST', '', true);       
+        var data = new FormData();
+        for(var i = 0; i < files.length; i++) data.append('file'+i, files[i]);
+        xhr.send(data);        
+      };
+      
+
+      
+    </script>
+
+  </body>
+</html>
