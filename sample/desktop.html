@@ -1,0 +1,16 @@
+
+<button id="simplenotify">Simple Notification</button>
+<button id="htmlnotify">HTML Notification</button>
+
+<script>
+window.onload = function(){
+		document.querySelector('#simplenotify').addEventListener('click', function() {
+	  if (window.webkitNotifications.checkPermission() == 0) { // 0 is PERMISSION_ALLOWED
+		    window.webkitNotifications.createNotification(
+		        'http://fc07.deviantart.net/fs7/i/2005/265/a/f/Adobe_Logo_by_Zimed.png', 'Adobe', 'Notification content...');
+	  } else {
+	    window.webkitNotifications.requestPermission();
+	  }
+	}, false);
+}
+</script>
