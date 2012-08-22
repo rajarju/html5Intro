@@ -1,0 +1,16 @@
+CACHE MANIFEST
+# version 1.0
+
+CACHE:
+http://themes.googleusercontent.com/static/fonts/lato/v6/9k-RPmcnxYEPm8CNFsH2gg.woff
+http://themes.googleusercontent.com/static/fonts/lato/v6/wkfQbvfT_02e2IWO3yYueQ.woff
+
+lib/font/league_gothic-webfont.ttf
+lib/js/head.min.js
+lib/js/highlight.js
+js/reveal.js
+
+css/main.css
+lib/css/zenburn.css
+css/reset.css
+css/print.css
